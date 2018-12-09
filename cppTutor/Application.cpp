@@ -6,14 +6,15 @@ class Entity
 {
 private:
 	std::string m_Name;
-	
+	int m_Score;
 public:
 	Entity()
-	{
-		m_Name = "Unknows";
+		:m_Name("Unknown"),m_Score(0) // initilize in order
+	{	
 	}
-	Entity(const std::string& name) {
-		m_Name = name;
+	Entity(const std::string& name) 
+		:m_Name(name)
+	{
 	}
 	const std::string& GetName() const
 	{
