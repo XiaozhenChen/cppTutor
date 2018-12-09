@@ -6,11 +6,17 @@ class Entity
 {
 private:
 	std::string m_Name;
-	mutable int m_DebugCount = 0;
+	
 public:
+	Entity()
+	{
+		m_Name = "Unknows";
+	}
+	Entity(const std::string& name) {
+		m_Name = name;
+	}
 	const std::string& GetName() const
 	{
-		m_DebugCount++;  // mutable make the const int changeable
 		return m_Name;
 	}
 };
@@ -18,6 +24,11 @@ public:
 int main()
 {
 	const Entity e;
+	const Entity e1("XiaoZhen");
+
+	std::cout << e.GetName() << std::endl;
+	std::cout << e1.GetName() << std::endl;
+
 	e.GetName();
 	std::cin.get();
 }
